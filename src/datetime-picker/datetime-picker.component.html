@@ -1,6 +1,7 @@
 <mat-form-field>
-    <input matInput [matDatepicker]="picker" [placeholder]="placeholder" [value]="value" (dateChange)="updateDate($event)" (change)="updateDateTime($event.target)"  >          
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <button #dialogTrigger mat-icon-button class='mat-button-base' matSuffix (click)="onTimeClicked()"><i class="far fa-clock"></i></button>
-    <mat-datepicker #picker (opened)="markPopupUsed()"></mat-datepicker>
+	<input matInput [matDatepicker]="picker" [value]="value" (dateChange)="updateDate($event)" (change)="updateDateTime($event)"  >
+	<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+	<button #dialogTrigger mat-icon-button class='mat-button-base' matSuffix (click)="onTimeClicked()">Time</button>
+	<mat-datepicker #picker></mat-datepicker>  
 </mat-form-field>
+<mat-icon>home</mat-icon>

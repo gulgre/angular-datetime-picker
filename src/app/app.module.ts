@@ -10,6 +10,7 @@ import { TimePickerComponent } from "../datetime-picker/time-picker/time-picker.
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatInputModule } from "@angular/material/input";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   declarations: [AppComponent, DateTimePickerComponent, TimePickerComponent],
   bootstrap: [AppComponent]

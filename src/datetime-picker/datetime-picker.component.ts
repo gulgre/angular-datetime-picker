@@ -10,16 +10,18 @@ import {
 } from "@angular/core";
 
 import { MatDialog } from "@angular/material/dialog";
-import { Platform } from "@angular/cdk/platform";
 import { TimePickerComponent } from "./time-picker/time-picker.component";
-import { CustomDateAdapter } from "./custom-date.adapter";
-import { DateAdapter } from "@angular/material/core";
+import { CustomDateAdapter, CUSTOM_DATE_FORMATS } from "./custom-date.adapter";
+import { DateAdapter, MAT_DATE_FORMATS } from "@angular/material/core";
 
 @Component({
   selector: "dwf-datetime-picker",
   templateUrl: "./datetime-picker.component.html",
   styleUrls: ["./datetime-picker.component.scss"],
-  providers: [{ provide: DateAdapter, useValue: CustomDateAdapter }],
+  providers: [
+    { provide: DateAdapter, useClass: CustomDateAdapter },
+    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS }
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class DateTimePickerComponent implements OnInit {
@@ -33,7 +35,9 @@ export class DateTimePickerComponent implements OnInit {
     this.value = new Date();
   }
 
-  ngOnInit() {}
+  ngOnInit() {    
+  }
+
   updateDate(event) {
     let newDate = event.value;
     if (newDate) {
@@ -95,15 +99,15 @@ export class DateTimePickerComponent implements OnInit {
           trigger: this.dialogTrigger,
           startDate: this.value
         },
-        backdropClass: "transparent-backdrop",
-        panelClass: "lei-no-padding-dialog"
+        backdropClass: "transparent-backdrop"
+        // panelClass: "lei-no-padding-dialog"
       })
-      .afterClosed()
-      // .subscribe(newTime => {
-      //   if (newTime) {
-      //     this.updateTime(newTime);
-      //   }
-      // });
+      .afterClosed();
+    // .subscribe(newTime => {
+    //   if (newTime) {
+    //     this.updateTime(newTime);
+    //   }
+    // });
   }
 
   markPopupUsed() {
