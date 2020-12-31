@@ -12,7 +12,7 @@ import {
   MatDialogRef,
   MatDialogConfig,
   MAT_DIALOG_DATA
-} from "@angular/material";
+} from "@angular/material/dialog";
 
 export enum TimePickerStage {
   hour,
