@@ -1,0 +1,47 @@
+.hidden {
+    display:none;   
+}
+
+.mat-dialog-container {
+    padding:0px;
+}
+
+div.time-picker {
+    position: relative;
+    left:0px;
+    top:-20px;
+    width: 160px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+div.time-picker > div {
+    vertical-align: middle;
+    align-content: center;    
+    // border: 1px solid orange;;
+}
+div.time-picker-element {
+    height:40px;
+    width: 40px;
+    vertical-align: middle;
+    font-size: large;
+    display:inline-block;
+    text-align: center;
+}
+div.time-picker-element-thin {
+    vertical-align: middle;
+    height:40px;
+    width: 20px;
+    font-size: large;
+    display:inline-block;
+    text-align: center;
+}
+mat-select {
+    scrollbar-color:transparent;
+}
+
+div.mat-select-arrow{    
+    border:0px solid transparent;
+    // border-top: 0px solid transparent;
+    margin:1px;
+}
