@@ -88,7 +88,7 @@ export class TimePickerComponent implements OnInit {
   setAm(isAm: boolean) {
     if (this.isAm !== isAm) {
       this.isAm = isAm;
-      this.selectedTime.setHours(this.hourHand + (this.isAm ? 0 : 12));
+      this.selectedTime.setHours(this.hourHand % 12 + (this.isAm ? 0 : 12));
       this.selectedTime = new Date(this.selectedTime);
     }
   }
@@ -97,7 +97,8 @@ export class TimePickerComponent implements OnInit {
     switch (this.stage) {
       case TimePickerStage.hour:
         this.hourHand = value;
-        this.selectedTime.setHours(this.hourHand + (this.isAm ? 0 : 12));
+        console.log(this.hourHand);
+        this.selectedTime.setHours((this.hourHand % 12) + (this.isAm ? 0 : 12));
         this.selectedTime = new Date(this.selectedTime);
         this.stage = TimePickerStage.minute;
         this.caption = "Select Minutes";
