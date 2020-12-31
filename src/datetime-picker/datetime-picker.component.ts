@@ -35,8 +35,7 @@ export class DateTimePickerComponent implements OnInit {
     this.value = new Date();
   }
 
-  ngOnInit() {    
-  }
+  ngOnInit() {}
 
   updateDate(event) {
     let newDate = event.value;
@@ -102,12 +101,12 @@ export class DateTimePickerComponent implements OnInit {
         backdropClass: "transparent-backdrop"
         // panelClass: "lei-no-padding-dialog"
       })
-      .afterClosed();
-    // .subscribe(newTime => {
-    //   if (newTime) {
-    //     this.updateTime(newTime);
-    //   }
-    // });
+      .afterClosed()
+      .subscribe(newTime => {
+        if (newTime) {
+          this.updateTime(newTime);
+        }
+      });
   }
 
   markPopupUsed() {
