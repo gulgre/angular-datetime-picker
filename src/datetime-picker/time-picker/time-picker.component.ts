@@ -22,8 +22,8 @@ export enum TimePickerStage {
 
 @Component({
   selector: "dwf-timepicker",
-  templateUrl: "timepicker.component.html",
-  styleUrls: ["timepicker.component.scss"]
+  templateUrl: "time-picker.component.html",
+  styleUrls: ["time-picker.component.scss"]
 })
 export class TimePickerComponent implements OnInit {
   @Input() startTime: Date = new Date();
