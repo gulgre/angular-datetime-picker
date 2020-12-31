@@ -44,3 +44,7 @@ div.mat-select-arrow {
   border: 0px solid transparent;
   margin: 1px;
 }
+
+mat-icon {
+  color: rgb(0, 0, 0, 0.54);
+}
