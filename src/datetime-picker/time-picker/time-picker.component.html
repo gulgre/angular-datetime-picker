@@ -1,0 +1,16 @@
+<div class='timepicker main-wrapper'>
+    <div class="header"><label>{{caption}}</label></div>
+    <div class="clock-wrapper">
+      <div *ngFor='let hour of clockHours;index as idx'  [class]='getHourClass(hour)' (click)=setTime(hour)>{{getLabel(idx + 1)}}</div>
+      <div class="timeInput">{{selectedTime | date:'shortTime'}}</div>
+    </div>
+    <div class="footer">
+      <div class="column-1" [ngClass]="isAm ? 'selected' : ''" (click)="setAm(true)">AM</div>
+      <div class="column-2" [ngClass]="isAm ? '' : 'selected'" (click)="setAm(false)">PM</div>
+    </div>
+    <hr/>
+    <div class="footer" >
+       <div class="column-1 ok" (click)="complete()">OK</div>
+        <div class="column-2 cancel" (click)="cancel()">Cancel</div>
+    </div>
+  </div>
