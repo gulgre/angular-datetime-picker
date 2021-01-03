@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, Input, VERSION } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +7,8 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
+  @Input() value: Date;
+  onValueChanged($event) {
+    console.log(this.value);
+  }
 }
