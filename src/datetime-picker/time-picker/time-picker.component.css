@@ -2,8 +2,15 @@
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.time-picker.main-content {
+  transform-origin: left top;
+}
 div {
   width: 250px;
+}
+
+.mat-dialog-container {
+  padding: 8px;
 }
 
 .clock-wrapper {
